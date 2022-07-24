@@ -14,22 +14,22 @@ function App() {
   return (
     <BrowserRouter>
     <Switch>
-    <Route path='/' exaxt>
+    <Route path='/' exact>
         <Redirect to='/mall'></Redirect>
       </Route>
-      <Route path='/mall' exaxt>
+      <Route path='/mall' exact>
         <HomePage />
       </Route>
-      <Route path='/cart' exaxt>
+      <Route path='/cart' exact>
         <CartPage />
       </Route>
-      <Route path='/checkout' exaxt>
+      <Route path='/checkout' exact>
         <CheckoutPage />
       </Route>
-      <Route path='/mall/:categoryName' exaxt>
+      <Route path='/mall/:categoryName' exact>
         <ProductCollectionPage />
       </Route>
-      <Route path='/:productName' exaxt>
+      <Route path='/:productName' exact>
         <ProductPage />
       </Route>
     </Switch>
