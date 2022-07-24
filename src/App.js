@@ -9,6 +9,7 @@ import CartPage from './Pages/CartPage';
 import CheckoutPage from './Pages/CheckoutPage';
 import ProductCollectionPage from './Pages/ProductCollectionPage'
 import ProductPage from './Pages/ProductPage'
+import 'antd/dist/antd.css'
 
 function App() {
   return (
