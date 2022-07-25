@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import DefaultLayout from "../components/layout/DefaultLayout";
 import ClearFix from "../components/common/ClearFix";
 import styled from "styled-components";
@@ -8,6 +8,7 @@ import Banner1 from '../components/image/banner/banner1.jpg'
 import Banner2 from '../components/image/banner/banner2.jpg'
 import Banner3 from '../components/image/banner/banner3.jpg'
 import ProductCard from "../components/product/ProductCard";
+import AuthContext from "../components/auth/AuthContext";
 
 const BannerBox = styled.div`
     display: flex;
@@ -78,9 +79,13 @@ const Image = styled.div`
 `
 
 const HomePage = () => {
+    // 靠這個技巧從AuthContext裡面拿出來，用出對應的顯示畫面
+    const {isAuthenticated} = useContext(AuthContext)
+
     return(
         <DefaultLayout fixedHeader>
             <ClearFix />
+            {isAuthenticated && <h1>歡迎回來</h1>}
             <BannerBox>
             <BannerCarouselContainer>
                 <Carousel autoplay>
