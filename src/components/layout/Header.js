@@ -41,7 +41,7 @@ const Box = styled.div`
 
 const Header = ({className}) => {
     // 可以把AuthContext 拿出來
-    const {isAuthenticated} = useContext(AuthContext)
+    const {isAuthenticated, logout} = useContext(AuthContext)
     return(
         <StyledHeader className={className}>
             <Container>
@@ -56,15 +56,18 @@ const Header = ({className}) => {
                     <a href="#!">通知</a>
                     <a href="#!">幫助中心</a>
                     {isAuthenticated ? (
+                        <div>
                         <a href="#!">Kevin</a>
+                        <span onClick={() => logout()}>登出</span>
+                        </div>
                     ):(
-                        <a href="#!">登入/註冊</a>
+                       <Link to='/login'>登入/註冊</Link>
                     )}
                     </Toolbar>
                 </StyledHeaderSection>
                 <StyledHeaderSection>
                 <Link to="/">
-                <img src={Logo} alt="logo" height={48}></img>
+                <img src={Logo} alt="logo" height={56}></img>
                 </Link>
                     <Box>
                     <Input.Search 

@@ -11,6 +11,7 @@ import ProductPage from './Pages/ProductPage'
 import 'antd/dist/antd.css'
 import ScrollToTop from "./components/common/ScrollToTop";
 import { AuthProvider } from "./components/auth/AuthContext";
+import LoginPage from "./Pages/LoginPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route  path="/" element={<HomePage />} />
+        <Route  path="/login" element={<LoginPage />} />
         <Route  path="/cart" element={<CartPage />} />
         <Route  path="/checkout" element={ <CheckoutPage />} />
         <Route  path="/mall/:categoryName" element={<ProductCollectionPage />} />
