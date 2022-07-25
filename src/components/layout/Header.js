@@ -38,9 +38,9 @@ const Box = styled.div`
 `
 
 
-const Header = () => {
+const Header = ({className}) => {
     return(
-        <StyledHeader>
+        <StyledHeader className={className}>
             <Container>
                 <StyledHeaderSection>
                     <Navigator>

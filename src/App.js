@@ -1,8 +1,7 @@
 import {
-  Switch,
+  Routes,
   Route,
-  BrowserRouter as Router,
-  Redirect,
+  BrowserRouter,
 } from "react-router-dom";
 import HomePage from './Pages/HomePages';
 import CartPage from './Pages/CartPage';
@@ -14,29 +13,16 @@ import ScrollToTop from "./components/common/ScrollToTop";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <ScrollToTop />
-    <Switch>
-    <Route exact path='/' >
-        <Redirect to='/mall'></Redirect>
-      </Route>
-      <Route exact path='/mall' >
-        <HomePage />
-      </Route>
-      <Route exact path='/cart' >
-        <CartPage />
-      </Route>
-      <Route exact path='/checkout' >
-        <CheckoutPage />
-      </Route>
-      <Route exact path='/mall/:categoryName' >
-        <ProductCollectionPage />
-      </Route>
-      <Route exact path='/:productName' >
-        <ProductPage />
-      </Route>
-    </Switch>
-    </Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/checkout" element={ <CheckoutPage />} />
+        <Route path="/mall/:categoryName" element={<ProductCollectionPage />} />
+        <Route path="/:productName" element={<ProductPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
