@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Banner1 from '../components/image/banner/banner1.jpg'
 import Banner2 from '../components/image/banner/banner2.jpg'
 import Banner3 from '../components/image/banner/banner3.jpg'
+import ProductCard from "../components/product/ProductCard";
 
 const BannerBox = styled.div`
     display: flex;
@@ -46,6 +47,25 @@ const BannerFeatureColumn = styled.div`
 `
 const CustomerContainer = styled.div`
     margin-bottom: 48px;
+`
+
+const ProductCollectionContainer = styled.div`
+/* 把margin 推回來 */
+    margin: -4px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+`
+
+const ProductContainer = styled.div`
+    width: 100%;
+    padding: 4px;
+    @media (min-width: 577px){
+        width: 50%;
+    }
+    @media (min-width: 769px){
+        width: 20%;
+    }
 `
 
 const Image = styled.div`
@@ -96,6 +116,58 @@ const HomePage = () => {
                 <Image height={100} url={Banner3}></Image>
                 </Link>
             </CustomerContainer>
+            <ProductCollectionContainer>
+                <ProductContainer>
+                    <Link to='/p001'>
+                    <ProductCard title='Banner1' coverUrl={Banner1} salePrices={[100, 200]} listPrices={[200,299]} />
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to='/p002'>
+                    <ProductCard title='Banner2' coverUrl={Banner2} salePrices={[100, 200]} listPrices={[200,299]} />
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to='/p002'>
+                    <ProductCard title='Banner3' coverUrl={Banner3} salePrices={[100, 200]} listPrices={[200,299]} />
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to='/p002'>
+                    <ProductCard title='Banner3' coverUrl={Banner1} salePrices={[100, 200]} listPrices={[200,299]} />
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to='/p002'>
+                    <ProductCard title='Banner3' coverUrl={Banner2} salePrices={[100, 200]} listPrices={[200,299]} />
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to='/p002'>
+                    <ProductCard title='Banner3' coverUrl={Banner3} salePrices={[100, 200]} listPrices={[200,299]} />
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to='/p002'>
+                    <ProductCard title='Banner3' coverUrl={Banner1} salePrices={[100, 200]} listPrices={[200,299]} />
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to='/p002'>
+                    <ProductCard title='Banner3' coverUrl={Banner2} salePrices={[100, 200]} listPrices={[200,299]} />
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to='/p002'>
+                    <ProductCard title='Banner3' coverUrl={Banner3} salePrices={[100, 200]} listPrices={[200,299]} />
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to='/p002'>
+                    <ProductCard title='Banner3' coverUrl={Banner1} salePrices={[100, 200]} listPrices={[200,299]} />
+                    </Link>
+                </ProductContainer>
+            </ProductCollectionContainer>
         </DefaultLayout>
     )
 }

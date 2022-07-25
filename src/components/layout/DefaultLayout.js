@@ -7,6 +7,7 @@ import Container from "../common/Container";
 const  PageHeader = styled.div`
     ${props => props.fixed && css`
         position: fixed;
+        z-index: 1;
     `}
 `
 
