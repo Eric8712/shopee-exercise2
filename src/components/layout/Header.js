@@ -55,6 +55,7 @@ const Header = ({className}) => {
                     <Toolbar>
                     <a href="#!">通知</a>
                     <a href="#!">幫助中心</a>
+                    {/* 由上面的UseContext中的Value(IsAuthenticated來執行判斷) */}
                     {isAuthenticated ? (
                         <div>
                         <a href="#!">Kevin</a>
@@ -67,7 +68,7 @@ const Header = ({className}) => {
                 </StyledHeaderSection>
                 <StyledHeaderSection>
                 <Link to="/">
-                <img src={Logo} alt="logo" height={56}></img>
+                    <img src={Logo} height={100}></img>
                 </Link>
                     <Box>
                     <Input.Search 

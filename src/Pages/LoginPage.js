@@ -23,7 +23,7 @@ const LoginPage = () => {
                 <Container>
                     <StyledLoginContainer>
                     <div>
-                        <img src={Logo2} alt="logo2" height={240}></img>
+                        <img src={Logo2} alt="logo2" height={100}></img>
                     </div>
                     <LoginForm />
                     </StyledLoginContainer>

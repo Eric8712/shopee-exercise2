@@ -11,8 +11,9 @@ export const AuthProvider = ({children}) => {
 
 
     useEffect(() => {
+        // 用LocalStorage 把它存起來(畫面重整不會變成預設的 isAuthenticared: false)
         try{
-            const authState = Json.parse(localStorage.getItem('shopee:auth.state'))
+            const authState = JSON.parse(localStorage.getItem('shopee:auth.state'))
         if (authState && authState.token ) {
             setIsAuthenticated(true);
             }
@@ -23,23 +24,29 @@ export const AuthProvider = ({children}) => {
     return <AuthContext.Provider 
     value={{
         isAuthenticated,
+        // 登入畫面是非同步的，使用async
         login: async (userName, password) => {
             console.log(userName, password)
             if(userName === 'test') {
                 const token = 'good_token'
-                localStorage.setItem('shopee:auth.state', Json.stringfly({token: 'good_token'}))
-                setIsAuthenticated(true)
-                return {token}
+                // 上面的useEffect成功的話，就要儲存他
+                localStorage.setItem('shopee:auth.state', JSON.stringify({ token })
+                );
+                setIsAuthenticated(true);
+                // 一般登入會回傳一個權杖
+                return { token };
             }
             setIsAuthenticated(false)
             return {token: null, error:'invalid password'};
         },
         logout: async () => {
             setIsAuthenticated(false)
+            // 登出後要把LocalStorage的儲存狀態給清掉(removeItem)
             localStorage.removeItem('shopee:auth.state')
         }
     }}
     >
+        {/* children 裡面的元件可以使用到 AuthContext.Provider的Value */}
         {children}
         </AuthContext.Provider>
 }

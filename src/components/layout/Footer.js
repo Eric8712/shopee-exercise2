@@ -2,9 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import Container from "../common/Container";
 import { Link } from "react-router-dom";
-import CVSlogo from '../image/超商Logo.png'
-import Remark from '../image/24h.png'
-import QRCode from '../image/QR code.png'
+import CVSlogo from '../image/超商Logo.png';
+import Remark from '../image/24h.png';
+import QRCode from '../image/QR code.png';
+import AppStore from '../image/install/APP-store.png';
+import GooglePlay from '../image/install/googlePlay.png';
+import AppGallery from '../image/install/AppGallery.png';
 
 
 const StyledFooter = styled.footer`
@@ -27,7 +30,7 @@ const FooterColumn = styled.div`
 `
 const Box = styled.div`
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 `
 
 const  FooterColumnTitle = styled.h4`
@@ -43,16 +46,16 @@ const Footer = () => {
             <FooterColumn>
             <FooterColumnTitle>客服中心</FooterColumnTitle>
             <Link to='#!'>幫助中心</Link>
-            <Link to='#!'>幫助中心</Link>
-            <Link to='#!'>幫助中心</Link>
-            <Link to='#!'>幫助中心</Link>
+            <Link to='#!'>蝦皮商城</Link>
+            <Link to='#!'>付款方式</Link>
+            <Link to='#!'>蝦皮錢包</Link>
             </FooterColumn>
             <FooterColumn>
             <FooterColumnTitle>關於蝦皮</FooterColumnTitle>
-            <Link to='#!'>幫助中心</Link>
-            <Link to='#!'>幫助中心</Link>
-            <Link to='#!'>幫助中心</Link>
-            <Link to='#!'>幫助中心</Link>
+            <Link to='#!'>關於蝦皮</Link>
+            <Link to='#!'>加入我們</Link>
+            <Link to='#!'>蝦皮條款</Link>
+            <Link to='#!'>隱私權政策</Link>
             </FooterColumn>
             <FooterColumn>
             <FooterColumnTitle>物流合作</FooterColumnTitle>
@@ -62,20 +65,21 @@ const Footer = () => {
             </FooterColumn>
             <FooterColumn>
             <FooterColumnTitle>關注我們</FooterColumnTitle>
-            <Link to='#!'>幫助中心</Link>
-            <Link to='#!'>幫助中心</Link>
-            <Link to='#!'>幫助中心</Link>
-            <Link to='#!'>幫助中心</Link>
+            <Link to='#!'><i style={{width:20, fontSize:15}} class="fa-brands fa-facebook"></i>Facebook</Link>
+            <Link to='#!'><i style={{width:20, fontSize:15}} class="fa-brands fa-square-instagram"></i>Instagram</Link>
+            <Link to='#!'><i style={{width:20, fontSize:15}} class="fa-brands fa-line"></i>Line</Link>
+            <Link to='#!'><i style={{width:20, fontSize:15}} class="fa-brands fa-linkedin"></i>Linkedn</Link>
             </FooterColumn>
             <FooterColumn>
             <FooterColumnTitle>下載蝦皮</FooterColumnTitle>
             <Box>
                 <div>
-                <img src={QRCode} alt='Qr_code' width='50%'></img>
+                <img src={QRCode} alt='Qr_code' width='65%'></img>
                 </div>
                 <div>
-                    <div>AppleStore</div>
-                    <div>GoogleStore</div>
+                    <div><img src={AppStore} width='80%'></img></div>
+                    <div><img src={GooglePlay} width='80%'></img></div>
+                    <div><img src={AppGallery} width='80%'></img></div>
                 </div>
             </Box>
             </FooterColumn>
