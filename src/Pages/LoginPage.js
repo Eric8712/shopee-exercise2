@@ -10,10 +10,12 @@ const StyledLoginBox = styled.div`
 `
 
 const StyledLoginContainer = styled(Container)`
+    width: 1000px;
     display: flex;
     justify-content: space-between;
     padding: 48px 0px;
 `
+
 
 
 const LoginPage = () => {
@@ -23,7 +25,7 @@ const LoginPage = () => {
                 <Container>
                     <StyledLoginContainer>
                     <div>
-                        <img src={Logo2} alt="logo2" height={100}></img>
+                        <img src={Logo2} alt="logo2" width={280} style={{marginTop:'20px'}}></img>
                     </div>
                     <LoginForm />
                     </StyledLoginContainer>
