@@ -44,7 +44,7 @@ const OtherLoginButtom = styled.div`
 
 
 const LoginForm = () => {
-    const navigate = useNavigate
+    const navigate = useNavigate();
     const {login, isAuthenticated } = useContext(AuthContext)
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -60,9 +60,9 @@ const LoginForm = () => {
     };
 
     // 判斷 isAuthenticated 是否為登入則自動跳轉
-    // useEffect(() => {
-    //     isAuthenticated && navigate("../../Pages/HomePages.js", { replace: true });
-    // },[isAuthenticated])
+    useEffect(() => {
+        isAuthenticated && navigate("/", { replace: true });
+    },[isAuthenticated])
 
 
     return(

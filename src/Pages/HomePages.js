@@ -17,6 +17,7 @@ import BannerRight1 from '../components/image/banner/bannerRight-1.png'
 import BannerRight2 from '../components/image/banner/bannerRight-2.png'
 import ProductCard from "../components/product/ProductCard";
 import AuthContext from "../components/auth/AuthContext";
+import PopupModal from "../components/common/PopupModal";
 
 const BannerBox = styled.div`
     display: flex;
@@ -93,6 +94,7 @@ const HomePage = () => {
 
     return(
         <DefaultLayout fixedHeader>
+            <PopupModal />
             <ClearFix />
             {isAuthenticated && <h1>歡迎回來</h1>}
             <BannerBox>
@@ -115,7 +117,7 @@ const HomePage = () => {
                     <Image height={100} url={BannerRight1}></Image>
                     </Link>
                     <Link to='P005'>
-                    <Image height={100} url={BannerRight1}></Image>
+                    <Image height={100} url={BannerRight2}></Image>
                     </Link>
                 </BannerContainer>
             </BannerSectionContainer>
