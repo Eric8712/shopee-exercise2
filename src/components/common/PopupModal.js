@@ -6,7 +6,7 @@ const eventProductId = 'p003'
 
 const PopupModal = () => {
     const popupHistory = JSON.parse(localStorage.getItem('shopee:popup.history'));
-    const [isVisible, setIsVisible] = useState(!popupHistory || Date.now() - popupHistory.time > 3000)
+    const [isVisible, setIsVisible] = useState(!popupHistory || Date.now() - popupHistory.time > 30000)
     
     useEffect(() => {
         const history = {
@@ -16,7 +16,6 @@ const PopupModal = () => {
         !isVisible && localStorage.setItem("shopee:popup.history", JSON.stringify(history));
 
     },[isVisible])
-
 
 
     return(
