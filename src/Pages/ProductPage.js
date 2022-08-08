@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DefaultLayout from "../components/layout/DefaultLayout";
 import styled from "styled-components";
 import Banner2 from '../components/image/banner2.png';
@@ -27,11 +27,11 @@ const ProductContainer = styled.div`
 `
 const ProductDisplay1 = styled.div`
     width: 40%;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
 `
 const ProductDisplay2 = styled.div`
     width: 60%;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     padding-left: 40px;
     h2{
         font-weight: bolder;
@@ -127,7 +127,7 @@ const Count = styled.div`
     .title{
         margin-right: 90px;
     }
-    .buttom1{
+    .buttomCut{
         padding: 8px;
         border: 1px solid #d3d3d3;
         cursor: pointer;
@@ -137,10 +137,14 @@ const Count = styled.div`
         height: 40px;
 
     }
-    .buttom2{
+    .buttomPlus{
         padding: 8px;
         border: 1px solid #d3d3d3;
         cursor: pointer;
+    }
+    .number{
+        padding: 8px 20px 8px 20px;
+        border: 1px solid #808080;
     }
 `
 const Buy = styled.div`
@@ -165,6 +169,9 @@ const Buy = styled.div`
 
 
 const ProductPage = () => {
+
+    const [count, setCount] = useState(1);
+
     return(
     <DefaultLayout>
         <Title>
@@ -215,9 +222,9 @@ const ProductPage = () => {
                 </Dlevery>
                 <Count>
                     <div className="title">數量</div>
-                    <div className="buttom1">-</div>
-                    <input type='text'></input>
-                    <div className="buttom2">+</div>
+                    <div className="buttomCut" onClick={() => {setCount(count+1)}}>-</div>
+                    <div className="number">{count}</div>
+                    <div className="buttomPlus" onClick={() => {setCount(count+1)}}>+</div>
                 </Count>
                 <Buy>
                     <div className="Cart"><i class="fa-solid fa-cart-plus"></i>加入購物車</div>
